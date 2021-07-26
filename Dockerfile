@@ -1,9 +1,9 @@
-FROM golang:alpine3.14 AS binary
+FROM golang:1.9-alpine3.6
 ADD . /app
 WORKDIR /app
 RUN go build -o http
 
-FROM alpine:3.14
+FROM alpine:3.6
 WORKDIR /app
 ENV PORT 8000
 EXPOSE 8000
